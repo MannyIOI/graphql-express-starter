@@ -1,0 +1,15 @@
+mutation CREATE_USER {
+  createUser(
+    data: {
+      first_name: ""
+      last_name: ""
+      email: "1"
+      username: "1"
+      phone_number: "1"
+      avatar: "1"
+      mokos_points: 1
+    }
+  ) {
+    id
+  }
+}

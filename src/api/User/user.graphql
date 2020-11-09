@@ -1,0 +1,43 @@
+type User {
+  id: ID!
+  first_name: String
+  last_name: String
+  email: String
+  username: String
+  phone_number: String
+}
+
+type CreateUserInfo {
+  username: String
+  background_color: String
+}
+
+input UserCreateInput {
+  first_name: String
+  last_name: String
+  email: String
+  username: String!
+  phone_number: String!
+}
+
+input UserEditInput {
+  id: ID
+  first_name: String
+  last_name: String
+  email: String
+  username: String
+  phone_number: String
+  avatar: String
+  mokos_points: Int
+}
+
+type Query {
+  getAllUsers: [User]
+  getCreateUserInfo: CreateUserInfo
+  getUser(id: ID!): User
+}
+
+type Mutation {
+  createUser(data: UserCreateInput): User
+  editUser(data: UserEditInput): User
+}
